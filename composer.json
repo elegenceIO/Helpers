@@ -1,0 +1,12 @@
+{
+    "name": "elegenceio/helpers",
+    "description": "Read only Class Helper Loader for lazarusphp and elegentcore",
+    "type": "library",
+    "authors": [
+        {
+            "name": "itzzpadre"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
