@@ -1,5 +1,5 @@
 <?php
-namespace ElegenceIO\Core\Helpers;
+namespace ElegenceIO\Helpers;
 use DirectoryIterator;
 use Exception;
 
