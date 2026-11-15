@@ -1,6 +1,7 @@
 <?php
 namespace ElegenceIO\Helpers;
 use DirectoryIterator;
+use ElegenceIO\Support\Structure\Directories;
 use Exception;
 
 class Helpers
@@ -9,7 +10,8 @@ class Helpers
     private string $base = "";
     public function __construct()
     {
-        $this->add(rtrim(dirname(__DIR__,2),\DIRECTORY_SEPARATOR).\DIRECTORY_SEPARATOR."Files/");
+        $directory = rtrim(dirname(__DIR__),\DIRECTORY_SEPARATOR).\DIRECTORY_SEPARATOR."Helpers/Files/";
+        $this->add($directory);
     }
 
     public function add(string $path):void
@@ -29,7 +31,7 @@ class Helpers
             {
                 throw new Exception("Directory Helper not found");
             }
-            
+
             foreach(new DirectoryIterator($helper) as $item)
             {
             if($item->isDot()) continue;
@@ -37,7 +39,6 @@ class Helpers
                 $filepath = $item->getFileInfo();
                 [$name,$ext] = explode(".",$filepath);
                 $name = \ucfirst($name);
-
                 if(!isset($this->helper[$name])){
                     $this->helpers[$name] = $filepath;
                     include_once($this->helpers[$name]);
