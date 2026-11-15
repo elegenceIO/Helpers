@@ -1,5 +1,4 @@
 <?php
-
 use ElegenceIO\Containers\ContainerRegistry;
 
 // App Entry Point

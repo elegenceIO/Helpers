@@ -1,5 +1,5 @@
 <?php
-use ElegenceIO\Foundation\Parsers\Env;
+use ElegenceIO\Support\Env;
 
 if(!class_exists(Env::class))
 {
